@@ -37,9 +37,9 @@
             <label for="ProductionHouseId">Production House: </label>
             <br>
             <select name="ProductionHouseId" id="ProductionHouseId">
-                <option value="<%= movie.ProductionHouseId %>"><%= movie.ProductionHouseId %></option>
+                <option value="<%= movie.genre %>">---SELECTED---</option>
                 <% productionHouses.forEach(el => { %>
-                    <option value="<%= el.id %>"><%= el.name_prodHouse %></option>
+                    <option value="<%= el.id %>" <%= movie.ProductionHouseId === el.id ? 'selected' : '' %>><%= el.name_prodHouse %></option>
                 <% }) %>
             </select>
         </div>

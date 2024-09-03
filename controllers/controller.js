@@ -61,7 +61,7 @@ class Controller {
         try {
             const productionHouses = await ProductionHouse.productionHouses();
             const movie = await Movies.edit(id);
-            res.send(movie)
+            // res.send(movie)
             res.render('edit', {productionHouses, movie});
         } catch (error) {
             res.send(error.message);
