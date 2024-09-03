@@ -20,16 +20,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Movie</td>
-                <td>Released Year</td>
-                <td>Genre</td>
-                <td>Production House</td>
-                <td>
-                    <input type="button" value="Edit" onclick="location.href='/movies/edit/id';">
-                    <input type="button" value="Delete" onclick="location.href='/movies/delete/id';">
-                </td>
-            </tr>
+            <% movies.forEach(el => { %>
+                <tr>
+                    <td><%= el.name %></td>
+                    <td><%= el.released_year %></td>
+                    <td><%= el.genre %></td>
+                    <td><%= el.ProductionHouseId %></td>
+                    <td>
+                        <input type="button" value="Edit" onclick="location.href='/movies/edit/<%= el.id %>';">
+                        <input type="button" value="Delete" onclick="location.href='/movies/delete/<%= el.id %>';">
+                    </td>
+                </tr>
+            <% }) %>
         </tbody>
     </table>
 </body>

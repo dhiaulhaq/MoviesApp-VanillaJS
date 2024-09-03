@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies App</title>
+</head>
+<body>
+    <%- include('_nav') %>
+    <h1>Add Movie</h1>
+
+    <form method="post">
+        <div>
+            <label for="name">Name: </label>
+            <br>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="released_year">Released Year: </label>
+            <br>
+            <input type="number" name="released_year" id="released_year">
+        </div>
+        <div>
+            <label for="genre">Genre: </label>
+            <br>
+            <select name="genre" id="genre">
+                <option value="">---SELECT---</option>
+                <option value="animation">animation</option>
+                <option value="comedy">comedy</option>
+                <option value="drama">drama</option>
+                <option value="horor">horor</option>
+                <option value="religious">religious</option>
+                <option value="thriler">thriler</option>
+            </select>
+        </div>
+        <div>
+            <label for="ProductionHouseId">Production House: </label>
+            <br>
+            <select name="ProductionHouseId" id="ProductionHouseId">
+                <option value="">---SELECT---</option>
+                <% productionHouses.forEach(el => { %>
+                    <option value="<%= el.id %>"><%= el.name_prodHouse %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Save">
+        </div>
+    </form>
+</body>
+</html>

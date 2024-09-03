@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies App</title>
+</head>
+<body>
+    <%- include('_nav') %>
+    <h1>Edit Move</h1>
+
+    <form method="post">
+        <div>
+            <label for="name">Name: </label>
+            <br>
+            <input type="text" name="name" id="name" value="<%= movie.name %>">
+        </div>
+        <div>
+            <label for="released_year">Released Year: </label>
+            <br>
+            <input type="number" name="released_year" id="released_year" value="<%= movie.released_year %>">
+        </div>
+        <div>
+            <label for="genre">Genre: </label>
+            <br>
+            <select name="genre" id="genre">
+                <option value="<%= movie.genre %>">---SELECTED---</option>
+                <option value="animation" <%= movie.genre === 'animation' ? 'selected' : '' %>>animation</option>
+                <option value="comedy" <%= movie.genre === 'comedy' ? 'selected' : '' %>>comedy</option>
+                <option value="drama" <%= movie.genre === 'drama' ? 'selected' : '' %>>drama</option>
+                <option value="horor" <%= movie.genre === 'horor' ? 'selected' : '' %>>horor</option>
+                <option value="religious" <%= movie.genre === 'religious' ? 'selected' : '' %>>religious</option>
+                <option value="thriler" <%= movie.genre === 'thriler' ? 'selected' : '' %>>thriler</option>
+            </select>
+        </div>
+        <div>
+            <label for="ProductionHouseId">Production House: </label>
+            <br>
+            <select name="ProductionHouseId" id="ProductionHouseId">
+                <option value="<%= movie.ProductionHouseId %>"><%= movie.ProductionHouseId %></option>
+                <% productionHouses.forEach(el => { %>
+                    <option value="<%= el.id %>"><%= el.name_prodHouse %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Save">
+        </div>
+    </form>
+</body>
+</html>
