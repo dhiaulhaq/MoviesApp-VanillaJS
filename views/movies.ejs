@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies App</title>
+</head>
+<body>
+    <%- include('_nav') %>
+    <h1>Movies</h1>
+    <input type="button" value="Add Movie" onclick="location.href='/movies/add';">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Movie</th>
+                <th>Released Year</th>
+                <th>Genre</th>
+                <th>Production House</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Movie</td>
+                <td>Released Year</td>
+                <td>Genre</td>
+                <td>Production House</td>
+                <td>
+                    <input type="button" value="Edit" onclick="location.href='/movies/edit/id';">
+                    <input type="button" value="Delete" onclick="location.href='/movies/delete/id';">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
